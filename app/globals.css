@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 248, 249, 250;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 26, 32, 44;
+    --background-end-rgb: 17, 24, 39;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.hero-gradient {
+  background: linear-gradient(45deg, #0070f3, #3291ff);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-5 py-2 rounded-md hover:bg-primary-dark transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary px-5 py-2 rounded-md hover:bg-primary hover:text-white transition-colors;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-dark p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow;
+  }
+}
