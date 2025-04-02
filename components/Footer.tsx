@@ -13,16 +13,16 @@ export default function Footer() {
               scalable systems and high-performing teams.
             </p>
             <div className="flex space-x-4">
-              <a href="https://linkedin.com/in/plopesrezende" className="text-xl hover:text-primary transition-colors">
+              <a href="https://linkedin.com/in/plopesrezende" className="text-xl hover:text-primary transition-colors" target='_blank'>
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/plopesrezende" className="text-xl hover:text-primary transition-colors">
+              <a href="https://github.com/plopesrezende" className="text-xl hover:text-primary transition-colors" target='_blank'>
                 <FaGithub />
               </a>
               {/* <a href="#" className="text-xl hover:text-primary transition-colors">
                 <FaTwitter />
               </a> */}
-              <a href="malito:plopesrezende@gmail.com" className="text-xl hover:text-primary transition-colors">
+              <a href="mailto:plopesrezende@gmail.com" className="text-xl hover:text-primary transition-colors" target='_blank'>
                 <FaEnvelope />
               </a>
             </div>
