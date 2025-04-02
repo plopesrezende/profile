@@ -45,7 +45,7 @@ export default function ExperienceSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
           <p className="text-xl max-w-3xl mx-auto">
-            Over 15 years of experience delivering technical excellence across various roles and industries.
+            Over 18 years of experience delivering technical excellence across various roles and industries.
           </p>
         </div>
         

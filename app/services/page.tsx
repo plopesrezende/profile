@@ -8,7 +8,7 @@ export default function Services() {
         Leveraging over 15 years of experience to help your organization succeed through
         technical excellence and strategic guidance.
       </p>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
         <div className="card">
           <div className="mb-6">
@@ -18,7 +18,7 @@ export default function Services() {
               Expert guidance on designing robust, scalable system architectures tailored to your business needs.
             </p>
           </div>
-          
+
           <div>
             <h3 className="font-bold mb-2">What I Offer:</h3>
             <ul className="list-disc list-inside mb-6">
@@ -29,10 +29,8 @@ export default function Services() {
               <li>Legacy system modernization</li>
             </ul>
           </div>
-          
-          <button className="btn-primary">Learn More</button>
         </div>
-        
+
         <div className="card">
           <div className="mb-6">
             <FaUsers className="text-5xl text-primary mb-4" />
@@ -41,7 +39,7 @@ export default function Services() {
               Building and mentoring high-performance technical teams that deliver exceptional results.
             </p>
           </div>
-          
+
           <div>
             <h3 className="font-bold mb-2">What I Offer:</h3>
             <ul className="list-disc list-inside mb-6">
@@ -52,10 +50,8 @@ export default function Services() {
               <li>Technical interviewing and hiring</li>
             </ul>
           </div>
-          
-          <button className="btn-primary">Learn More</button>
         </div>
-        
+
         <div className="card">
           <div className="mb-6">
             <FaCloud className="text-5xl text-primary mb-4" />
@@ -64,7 +60,7 @@ export default function Services() {
               Guiding your organization to the cloud with secure, optimized infrastructure and DevOps practices.
             </p>
           </div>
-          
+
           <div>
             <h3 className="font-bold mb-2">What I Offer:</h3>
             <ul className="list-disc list-inside mb-6">
@@ -75,10 +71,8 @@ export default function Services() {
               <li>Cloud cost optimization</li>
             </ul>
           </div>
-          
-          <button className="btn-primary">Learn More</button>
         </div>
-        
+
         <div className="card">
           <div className="mb-6">
             <FaGraduationCap className="text-5xl text-primary mb-4" />
@@ -87,7 +81,7 @@ export default function Services() {
               Specialized technical training to elevate your team's skills and capabilities.
             </p>
           </div>
-          
+
           <div>
             <h3 className="font-bold mb-2">What I Offer:</h3>
             <ul className="list-disc list-inside mb-6">
@@ -98,11 +92,9 @@ export default function Services() {
               <li>TypeScript and modern JavaScript</li>
             </ul>
           </div>
-          
-          <button className="btn-primary">Learn More</button>
         </div>
       </div>
-      
+
       <div className="bg-primary text-white p-10 rounded-lg">
         <h2 className="text-3xl font-bold mb-4 text-center">Ready to transform your technical capabilities?</h2>
         <p className="text-xl mb-8 text-center">
