@@ -17,7 +17,7 @@ export default function Contact() {
             <FaEnvelope className="text-2xl text-primary mr-4" />
             <div>
               <h3 className="font-bold">Email</h3>
-              <p>paulo@example.com</p>
+              <p>plopesrezende@gmail.com</p>
             </div>
           </div>
           
@@ -25,7 +25,7 @@ export default function Contact() {
             <FaLinkedin className="text-2xl text-primary mr-4" />
             <div>
               <h3 className="font-bold">LinkedIn</h3>
-              <p>linkedin.com/in/paulorezende</p>
+              <p>linkedin.com/in/plopesrezende</p>
             </div>
           </div>
           
@@ -33,7 +33,7 @@ export default function Contact() {
             <FaGithub className="text-2xl text-primary mr-4" />
             <div>
               <h3 className="font-bold">GitHub</h3>
-              <p>github.com/paulorezende</p>
+              <p>github.com/plopesrezende</p>
             </div>
           </div>
           
@@ -41,7 +41,7 @@ export default function Contact() {
             <FaMapMarkerAlt className="text-2xl text-primary mr-4" />
             <div>
               <h3 className="font-bold">Location</h3>
-              <p>São Paulo, Brazil</p>
+              <p>Paraná, Brazil</p>
             </div>
           </div>
         </div>

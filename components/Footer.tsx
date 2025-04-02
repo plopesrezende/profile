@@ -13,16 +13,16 @@ export default function Footer() {
               scalable systems and high-performing teams.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-xl hover:text-primary transition-colors">
+              <a href="https://linkedin.com/in/plopesrezende" className="text-xl hover:text-primary transition-colors">
                 <FaLinkedin />
               </a>
-              <a href="#" className="text-xl hover:text-primary transition-colors">
+              <a href="https://github.com/plopesrezende" className="text-xl hover:text-primary transition-colors">
                 <FaGithub />
               </a>
-              <a href="#" className="text-xl hover:text-primary transition-colors">
+              {/* <a href="#" className="text-xl hover:text-primary transition-colors">
                 <FaTwitter />
-              </a>
-              <a href="#" className="text-xl hover:text-primary transition-colors">
+              </a> */}
+              <a href="malito:plopesrezende@gmail.com" className="text-xl hover:text-primary transition-colors">
                 <FaEnvelope />
               </a>
             </div>
@@ -50,8 +50,8 @@ export default function Footer() {
           
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
-            <p className="mb-2">São Paulo, Brazil</p>
-            <p className="mb-2">paulo@example.com</p>
+            <p className="mb-2">Parana, Brazil</p>
+            <p className="mb-2">plopesrezende@gmail.com</p>
             <Link href="/contact" className="text-primary hover:underline">
               Get in touch
             </Link>
