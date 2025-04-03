@@ -1,12 +1,15 @@
 'use client'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import Link from 'next/link'
 import LanguageToggle from './LanguageToggle'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { translations } from '@/translations'
+import Logo from './Logo'
+import ArchitectLogo from './ArchitectLogo'
+import TechLogo from './TechLogo'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,18 +24,22 @@ export default function Header() {
     { name: services, path: '/services' },
     { name: contact, path: '/contact' },
   ]
-  
+
   const isActive = (path: string) => {
     return pathname === path ? 'text-primary font-bold' : ''
   }
+
+  // Render the selected logo
+  const renderLogo = () => {
+    const props = { size: 'md' as const, showName: true };
+    return <TechLogo {...props} />;
+  };
 
   return (
     <header className="bg-white dark:bg-dark shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            Paulo Rezende
-          </Link>
+          {renderLogo()}
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center">

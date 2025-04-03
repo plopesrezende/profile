@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="512" height="512"><svg width="512" height="512" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Code brackets -->
+  <path d="M10 15L5 25L10 35M40 15L45 25L40 35" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  
+  <!-- Hex pattern for tech/code background -->
+  <path d="M25 7L35 13V27L25 33L15 27V13L25 7Z" fill="#3B82F6" fill-opacity="0.1" stroke="#3B82F6" stroke-width="1.25"></path>
+  
+  <!-- PR initials -->
+  <path d="M19 17V33M19 17H27C28.6569 17 30 18.3431 30 20C30 21.6569 28.6569 23 27 23H22" stroke="#1E3A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M27 23L32 33" stroke="#1E3A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  
+  <!-- Data point/node -->
+  <circle cx="25" cy="20" r="1.5" fill="#10B981"></circle>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

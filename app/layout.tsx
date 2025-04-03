@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import Favicon from '@/components/Favicon'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Favicon />
+      </head>
       <body className={inter.className}>
         <LanguageProvider>
           <Header />
