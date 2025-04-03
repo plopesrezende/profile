@@ -3,6 +3,7 @@
 import { FaLaptopCode, FaUsers, FaCloud, FaGraduationCap } from 'react-icons/fa'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { translations } from '@/translations'
+import Link from 'next/link'
 
 // Map of icons to use for each service
 const SERVICE_ICONS = [
@@ -55,9 +56,9 @@ export default function Services() {
           {ctaText}
         </p>
         <div className="flex justify-center">
-          <button className="bg-white text-primary font-bold px-8 py-3 rounded-md hover:bg-gray-100 transition-colors">
+          <Link href="/contact" className="bg-white text-primary font-bold px-8 py-3 rounded-md hover:bg-gray-100 transition-colors">
             {ctaButton}
-          </button>
+          </Link>
         </div>
       </div>
     </div>
