@@ -3,7 +3,7 @@ import { ContactTranslations } from '../types';
 export const contact: ContactTranslations = {
   pageTitle: "Contact Me",
   pageDescription: "Have a project in mind or want to discuss how I can help your organization? I'd love to hear from you.",
-  getInTouch: "Get In Touch",
+  getInTouch: "Contact Me",
   email: {
     title: "Email"
   },

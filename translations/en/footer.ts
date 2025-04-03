@@ -20,6 +20,6 @@ export const footer: FooterTranslations = {
     location: "Paraná, Brazil",
     email: "plopesrezende@gmail.com"
   },
-  getInTouch: "Get in touch",
+  getInTouch: "Contact Me",
   copyright: "© {year} Paulo Rezende. All rights reserved."
 };
