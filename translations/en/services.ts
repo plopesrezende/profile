@@ -52,5 +52,5 @@ export const services: ServicesTranslations = {
   ],
   ctaTitle: "Ready to transform your technical capabilities?",
   ctaText: "Let's discuss how my services can help your organization achieve its technical and business goals.",
-  ctaButton: "Schedule a Consultation"
+  ctaButton: "Contact Me",
 };
