@@ -1,10 +1,37 @@
+'use client'
+
 import Image from 'next/image'
 import { FaCode, FaLaptopCode, FaBrain, FaUsers } from 'react-icons/fa'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { translations } from '@/translations'
 
 export default function About() {
+  const { language } = useLanguage()
+  const { 
+    pageTitle, 
+    role, 
+    bio1, 
+    bio2, 
+    bio3, 
+    keySkills, 
+    skillsList, 
+    journey, 
+    journeyDescription1, 
+    journeyDescription2, 
+    journeyDescription3 
+  } = translations[language].about
+
+  // Mapping of skill icons
+  const skillIcons = [
+    <FaCode key="dev" className="text-5xl text-primary mb-4" />,
+    <FaLaptopCode key="arch" className="text-5xl text-primary mb-4" />,
+    <FaBrain key="leader" className="text-5xl text-primary mb-4" />,
+    <FaUsers key="team" className="text-5xl text-primary mb-4" />
+  ]
+
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-8 text-center">About Paulo Ricardo Rezende</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center">{pageTitle}</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
         <div>
@@ -18,72 +45,33 @@ export default function About() {
         </div>
         
         <div>
-          <h2 className="text-3xl font-bold mb-4">Software Architect & Tech Leader</h2>
-          <p className="text-lg mb-6">
-            With over 15 years of experience in software development and architecture,
-            I specialize in designing scalable, maintainable systems that solve complex business problems.
-          </p>
-          <p className="text-lg mb-6">
-            My passion lies in building high-performance teams and implementing modern
-            architectures using microservices, event-driven patterns, and cloud technologies.
-          </p>
-          <p className="text-lg">
-            As a technical leader, I've guided organizations through digital transformations,
-            helping them adopt DevOps practices, improve their development processes, and
-            leverage cutting-edge technologies to stay competitive.
-          </p>
+          <h2 className="text-3xl font-bold mb-4">{role}</h2>
+          <p className="text-lg mb-6">{bio1}</p>
+          <p className="text-lg mb-6">{bio2}</p>
+          <p className="text-lg">{bio3}</p>
         </div>
       </div>
       
       <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">Key Skills</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">{keySkills}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="card">
-            <FaCode className="text-5xl text-primary mb-4" />
-            <h3 className="text-xl font-bold mb-2">Software Development</h3>
-            <p>React, NextJS, TypeScript, Java Spring Boot, and more</p>
-          </div>
-          
-          <div className="card">
-            <FaLaptopCode className="text-5xl text-primary mb-4" />
-            <h3 className="text-xl font-bold mb-2">Architecture</h3>
-            <p>Microservices, Event Driven, DDD, CQRS, Cloud Native</p>
-          </div>
-          
-          <div className="card">
-            <FaBrain className="text-5xl text-primary mb-4" />
-            <h3 className="text-xl font-bold mb-2">Technical Leadership</h3>
-            <p>Team leadership, architectural guidance, mentoring</p>
-          </div>
-          
-          <div className="card">
-            <FaUsers className="text-5xl text-primary mb-4" />
-            <h3 className="text-xl font-bold mb-2">Team Building</h3>
-            <p>High-performance teams, agile practices, knowledge sharing</p>
-          </div>
+          {skillsList.map((skill, index) => (
+            <div className="card" key={index}>
+              {skillIcons[index]}
+              <h3 className="text-xl font-bold mb-2">{skill.title}</h3>
+              <p>{skill.description}</p>
+            </div>
+          ))}
         </div>
       </div>
       
       <div>
-        <h2 className="text-3xl font-bold mb-8 text-center">My Journey</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">{journey}</h2>
         <div className="prose max-w-none dark:prose-invert">
-          <p className="text-lg mb-4">
-            My technical journey began over 15 years ago, and has evolved through various roles
-            from developer to architect and technical leader. I've worked with startups, enterprises, 
-            and everything in between, gaining a comprehensive understanding of what makes
-            successful software projects and teams.
-          </p>
-          <p className="text-lg mb-4">
-            As co-founder of LEXP, I've applied my technical expertise to creating innovative
-            solutions for the education sector, demonstrating my ability to bridge business needs
-            with technical implementation.
-          </p>
-          <p className="text-lg">
-            Today, I'm focused on helping organizations build resilient, scalable systems and
-            empowering technical teams to achieve their full potential through consultation,
-            training, and hands-on architectural guidance.
-          </p>
+          <p className="text-lg mb-4">{journeyDescription1}</p>
+          <p className="text-lg mb-4">{journeyDescription2}</p>
+          <p className="text-lg">{journeyDescription3}</p>
         </div>
       </div>
     </div>

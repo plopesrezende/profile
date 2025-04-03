@@ -2,29 +2,19 @@
 
 import { FaLaptopCode, FaUsers, FaCloud, FaGraduationCap } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { translations } from '@/translations'
 
 export default function ServicesSection() {
-  const services = [
-    {
-      icon: <FaLaptopCode className="text-4xl text-primary mb-4" />,
-      title: 'Architecture Consulting',
-      description: 'Expert guidance on designing scalable, maintainable system architectures using microservices, event-driven patterns, and DDD.'
-    },
-    {
-      icon: <FaUsers className="text-4xl text-primary mb-4" />,
-      title: 'Team Leadership',
-      description: 'Building and mentoring high-performance technical teams that deliver exceptional results through effective processes and practices.'
-    },
-    {
-      icon: <FaCloud className="text-4xl text-primary mb-4" />,
-      title: 'Cloud Migration',
-      description: 'Guiding organizations to the cloud with secure, optimized Azure infrastructure and DevOps practices including Kubernetes.'
-    },
-    {
-      icon: <FaGraduationCap className="text-4xl text-primary mb-4" />,
-      title: 'Training & Workshops',
-      description: 'Specialized technical training in modern architecture, cloud-native development, and frontend/backend technologies.'
-    }
+  const { language } = useLanguage()
+  const { sectionTitle, sectionDescription, services } = translations[language].servicesSection
+  
+  // Define service icons to be reused
+  const SERVICE_ICONS = [
+    <FaLaptopCode key="architecture" className="text-4xl text-primary mb-4" />,
+    <FaUsers key="leadership" className="text-4xl text-primary mb-4" />,
+    <FaCloud key="cloud" className="text-4xl text-primary mb-4" />,
+    <FaGraduationCap key="training" className="text-4xl text-primary mb-4" />
   ]
   
   const containerVariants = {
@@ -50,9 +40,9 @@ export default function ServicesSection() {
     <section className="py-20 bg-light dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Services</h2>
+          <h2 className="text-3xl font-bold mb-4">{sectionTitle}</h2>
           <p className="text-xl max-w-3xl mx-auto">
-            Leveraging technology expertise to help businesses solve complex problems and achieve their goals.
+            {sectionDescription}
           </p>
         </div>
         
@@ -69,7 +59,7 @@ export default function ServicesSection() {
               className="card text-center"
               variants={itemVariants}
             >
-              <div>{service.icon}</div>
+              <div>{SERVICE_ICONS[index]}</div>
               <h3 className="text-xl font-bold mb-2">{service.title}</h3>
               <p>{service.description}</p>
             </motion.div>

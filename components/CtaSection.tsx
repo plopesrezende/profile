@@ -1,28 +1,67 @@
+'use client'
+
 import Link from 'next/link'
+import { FaGlobe } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { translations } from '@/translations'
 
 export default function CtaSection() {
+  const { language, toggleLanguage } = useLanguage()  
+  const currentContent = translations[language].cta
+  
   return (
-    <section className="py-20">
+    <section className="py-20 relative">
       <div className="container mx-auto px-4">
-        <div className="bg-primary text-white rounded-lg p-10 text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Technical Capabilities?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Whether you need architecture consulting, team leadership, or technical training,
-            I'm here to help your organization achieve its goals.
-          </p>
+        <div className="bg-primary text-white rounded-lg p-10 text-center max-w-4xl mx-auto relative">
+          <motion.h2 
+            key={`title-${language}`}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-3xl font-bold mb-4 pt-6"
+          >
+            {currentContent.title}
+          </motion.h2>
+          
+          <motion.p 
+            key={`description-${language}`}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="text-xl mb-8 max-w-2xl mx-auto"
+          >
+            {currentContent.description}
+          </motion.p>
+          
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link 
-              href="/contact" 
-              className="bg-white text-primary font-bold px-8 py-3 rounded-md hover:bg-gray-100 transition-colors"
+            <motion.div
+              key={`button1-${language}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
             >
-              Schedule a Consultation
-            </Link>
-            <Link 
-              href="/services" 
-              className="border-2 border-white text-white font-bold px-8 py-3 rounded-md hover:bg-white hover:text-primary transition-colors"
+              <Link 
+                href="/contact" 
+                className="bg-white text-primary font-bold px-8 py-3 rounded-md hover:bg-gray-100 transition-colors inline-block"
+              >
+                {currentContent.consultationButton}
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              key={`button2-${language}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
-              Explore Services
-            </Link>
+              <Link 
+                href="/services" 
+                className="border-2 border-white text-white font-bold px-8 py-3 rounded-md hover:bg-white hover:text-primary transition-colors inline-block"
+              >
+                {currentContent.servicesButton}
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>

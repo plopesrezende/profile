@@ -2,26 +2,15 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaQuoteLeft, FaChevronLeft, FaChevronRight, FaGlobe } from 'react-icons/fa'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { translations } from '@/translations'
 
 export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      text: "Paulo's architectural vision transformed our legacy system into a modern, scalable platform. His expertise in microservices and event-driven architecture was invaluable.",
-      author: "Maria Silva",
-      position: "CTO, Enterprise Solutions"
-    },
-    {
-      text: "Working with Paulo was a game-changer for our development team. His leadership and technical mentorship helped us improve our processes and deliver with much higher quality.",
-      author: "Carlos Mendes",
-      position: "Engineering Director, Tech Innovators"
-    },
-    {
-      text: "The cloud migration strategy Paulo designed for us resulted in 40% cost reduction and significantly improved system reliability. His deep knowledge of Azure and Kubernetes was evident.",
-      author: "Ana Ferreira",
-      position: "CEO, Digital Startup"
-    }
-  ]
+  const { language } = useLanguage()
+  
+  const currentContent = translations[language].testimonials
+  const testimonials = currentContent.testimonials
   
   const [currentIndex, setCurrentIndex] = useState(0)
   
@@ -36,31 +25,45 @@ export default function TestimonialsSection() {
   }
   
   return (
-    <section className="py-20 bg-light dark:bg-gray-900">
+    <section className="py-20 bg-light dark:bg-gray-900 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">What People Say</h2>
-          <p className="text-xl max-w-3xl mx-auto">
-            Feedback from clients and colleagues who have worked with me.
-          </p>
+          <motion.h2 
+            key={`title-${language}`}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-3xl font-bold mb-4"
+          >
+            {currentContent.title}
+          </motion.h2>
+          <motion.p 
+            key={`subtitle-${language}`}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="text-xl max-w-3xl mx-auto"
+          >
+            {currentContent.subtitle}
+          </motion.p>
         </div>
         
         <div className="max-w-4xl mx-auto relative">
           <button 
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center z-10"
-            aria-label="Previous testimonial"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center z-10 hover:bg-primary-dark transition-colors"
+            aria-label={currentContent.prevLabel}
           >
             <FaChevronLeft />
           </button>
           
           <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="card text-center py-10 px-6 md:px-12"
+            key={`${currentIndex}-${language}`}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.4 }}
+            className="card text-center py-10 px-6 md:px-12 bg-white dark:bg-gray-800 rounded-lg shadow-md"
           >
             <FaQuoteLeft className="text-4xl text-primary mx-auto mb-6" />
             <p className="text-xl mb-8">"{testimonials[currentIndex].text}"</p>
@@ -72,8 +75,8 @@ export default function TestimonialsSection() {
           
           <button 
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center z-10"
-            aria-label="Next testimonial"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center z-10 hover:bg-primary-dark transition-colors"
+            aria-label={currentContent.nextLabel}
           >
             <FaChevronRight />
           </button>
@@ -83,10 +86,10 @@ export default function TestimonialsSection() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full ${
-                  index === currentIndex ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-700'
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600'
                 }`}
-                aria-label={`Go to testimonial ${index + 1}`}
+                aria-label={`${currentContent.testimonialLabel} ${index + 1}`}
               />
             ))}
           </div>

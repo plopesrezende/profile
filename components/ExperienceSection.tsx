@@ -1,35 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { translations } from '@/translations'
 
 export default function ExperienceSection() {
-  const experiences = [
-    {
-      title: 'Technical Lead',
-      company: 'Enterprise Tech Company',
-      period: '2018 - Present',
-      description: 'Leading architecture design and implementation for cloud-native applications. Managing a team of 15 developers across multiple projects.'
-    },
-    {
-      title: 'Co-founder & CTO',
-      company: 'LEXP',
-      period: '2016 - Present',
-      description: 'Developed innovative EdTech solutions leveraging modern architecture patterns and cloud technologies to enhance educational experiences.'
-    },
-    {
-      title: 'Senior Software Architect',
-      company: 'Technology Consultancy',
-      period: '2012 - 2018',
-      description: 'Designed and implemented scalable enterprise solutions using microservices and event-driven architecture for Fortune 500 clients.'
-    },
-    {
-      title: 'Software Developer',
-      company: 'Digital Agency',
-      period: '2008 - 2012',
-      description: 'Developed web applications and services for various clients using Java, JavaScript, and emerging frontend technologies.'
-    }
-  ]
-  
+  const { language } = useLanguage()
+
+  // Get translations for the experience section
+  const { sectionTitle, sectionDescription, experiences } = translations[language].experienceSection
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -38,21 +18,21 @@ export default function ExperienceSection() {
       transition: { duration: 0.6 }
     }
   }
-  
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
+          <h2 className="text-3xl font-bold mb-4">{sectionTitle}</h2>
           <p className="text-xl max-w-3xl mx-auto">
-            Over 18 years of experience delivering technical excellence across various roles and industries.
+            {sectionDescription}
           </p>
         </div>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="relative border-l-4 border-primary pl-8 ml-4">
             {experiences.map((exp, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="mb-12 relative"
                 variants={fadeInUp}
