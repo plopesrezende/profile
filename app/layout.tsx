@@ -1,11 +1,11 @@
+import Favicon from '@/components/Favicon'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import { LanguageProvider } from '@/contexts/LanguageContext'
-import Favicon from '@/components/Favicon'
-import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'] })
 

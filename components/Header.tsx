@@ -1,16 +1,14 @@
 'use client'
 
-import { useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { FaBars, FaTimes } from 'react-icons/fa'
-import Link from 'next/link'
-import LanguageToggle from './LanguageToggle'
-import ThemeToggle from './ThemeToggle'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { translations } from '@/translations'
-import Logo from './Logo'
-import ArchitectLogo from './ArchitectLogo'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useState } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import LanguageToggle from './LanguageToggle'
 import TechLogo from './TechLogo'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -51,15 +49,15 @@ export default function Header() {
               ))}
             </ul>
             <div className="flex items-center space-x-3">
-              <ThemeToggle />
               <LanguageToggle />
+              <ThemeToggle />
             </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <ThemeToggle isMobile={true} />
             <LanguageToggle isMobile={true} />
+            <ThemeToggle isMobile={true} />
             <button
               className="ml-4 text-2xl"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -84,7 +82,7 @@ export default function Header() {
                     {item.name}
                   </Link>
                 </li>
-              ))}
+              ))}              
             </ul>
           </nav>
         )}

@@ -10,7 +10,7 @@ interface ThemeToggleProps {
 
 export default function ThemeToggle({ isMobile = false }: ThemeToggleProps) {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   
   // Avoid hydration mismatch by rendering after mount
   useEffect(() => {
@@ -20,16 +20,16 @@ export default function ThemeToggle({ isMobile = false }: ThemeToggleProps) {
   if (!mounted) return null
   
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
   }
   
   return (
     <button
       onClick={toggleTheme}
       className={`${isMobile ? 'text-xl' : 'text-lg'} p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors`}
-      aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+      aria-label={resolvedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
     >
-      {theme === 'dark' ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-600" />}
+      {resolvedTheme === 'dark' ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-600" />}
     </button>
   )
 }
