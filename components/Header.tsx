@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Link from 'next/link'
 import LanguageToggle from './LanguageToggle'
+import ThemeToggle from './ThemeToggle'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { translations } from '@/translations'
 import Logo from './Logo'
@@ -29,17 +30,11 @@ export default function Header() {
     return pathname === path ? 'text-primary font-bold' : ''
   }
 
-  // Render the selected logo
-  const renderLogo = () => {
-    const props = { size: 'md' as const, showName: true };
-    return <TechLogo {...props} />;
-  };
-
   return (
     <header className="bg-white dark:bg-dark shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          {renderLogo()}
+          <TechLogo size='md' showName={true} />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center">
@@ -55,11 +50,15 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <LanguageToggle />
+            <div className="flex items-center space-x-3">
+              <ThemeToggle />
+              <LanguageToggle />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
+            <ThemeToggle isMobile={true} />
             <LanguageToggle isMobile={true} />
             <button
               className="ml-4 text-2xl"

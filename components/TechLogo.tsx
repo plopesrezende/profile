@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 interface TechLogoProps {
   size?: 'sm' | 'md' | 'lg';
@@ -13,12 +14,24 @@ export default function TechLogo({
   showName = true
 }: TechLogoProps) {
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   
-  // Colors based on theme
-  const primaryColor = resolvedTheme === 'dark' ? '#60A5FA' : '#3B82F6'; // blue-400 : blue-500
-  const secondaryColor = resolvedTheme === 'dark' ? '#93C5FD' : '#1E3A8A'; // blue-300 : blue-900
-  const accentColor = resolvedTheme === 'dark' ? '#34D399' : '#10B981'; // emerald-400 : emerald-500
-  const textColor = resolvedTheme === 'dark' ? '#F9FAFB' : '#1F2937'; // gray-50 : gray-800
+  // Only render theme-dependent content after mounting to avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  // Use default colors for server-side rendering
+  const defaultPrimaryColor = '#3B82F6'; // blue-500
+  const defaultSecondaryColor = '#1E3A8A'; // blue-900
+  const defaultAccentColor = '#10B981'; // emerald-500
+  const defaultTextClass = 'text-gray-800';
+  
+  // Colors based on theme (only used client-side after mounting)
+  const primaryColor = mounted && resolvedTheme === 'dark' ? '#60A5FA' : defaultPrimaryColor;
+  const secondaryColor = mounted && resolvedTheme === 'dark' ? '#93C5FD' : defaultSecondaryColor;
+  const accentColor = mounted && resolvedTheme === 'dark' ? '#34D399' : defaultAccentColor;
+  const textColor = mounted ? (resolvedTheme === 'dark' ? 'text-gray-50' : 'text-gray-800') : defaultTextClass;
   
   // Dimensions based on size
   const dimensions = {
@@ -79,7 +92,7 @@ export default function TechLogo({
         </svg>
         
         {showName && (
-          <span className={`font-bold ${fontSize} ${resolvedTheme === 'dark' ? 'text-gray-50' : 'text-gray-800'}`}>
+          <span className={`font-bold ${fontSize} ${textColor}`}>
             Paulo Rezende
           </span>
         )}
