@@ -79,7 +79,7 @@ export default function TechLogo({
         </svg>
         
         {showName && (
-          <span className={`font-bold ${fontSize}`} style={{ color: textColor }}>
+          <span className={`font-bold ${fontSize} ${resolvedTheme === 'dark' ? 'text-gray-50' : 'text-gray-800'}`}>
             Paulo Rezende
           </span>
         )}
