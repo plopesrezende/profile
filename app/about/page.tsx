@@ -37,7 +37,7 @@ export default function About() {
         <div>
           <Image 
             src="/paulo-profile.jpg" 
-            alt="Paulo Ricardo Rezende" 
+            alt="Paulo Rezende" 
             width={500} 
             height={500} 
             className="rounded-lg shadow-lg"

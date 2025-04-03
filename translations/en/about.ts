@@ -1,7 +1,7 @@
 import { AboutTranslations } from '../types';
 
 export const about: AboutTranslations = {
-  pageTitle: "About Paulo Ricardo Rezende",
+  pageTitle: "About Paulo Rezende",
   role: "Software Architect & Tech Leader",
   bio1: "With over 18 years of experience in software development and architecture, I specialize in designing scalable, maintainable systems that solve complex business problems.",
   bio2: "My passion lies in building high-performance teams and implementing modern architectures using microservices, event-driven patterns, and cloud technologies.",

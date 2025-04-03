@@ -21,5 +21,5 @@ export const footer: FooterTranslations = {
     email: "plopesrezende@gmail.com"
   },
   getInTouch: "Get in touch",
-  copyright: "© {year} Paulo Ricardo Rezende. All rights reserved."
+  copyright: "© {year} Paulo Rezende. All rights reserved."
 };

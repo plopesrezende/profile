@@ -8,7 +8,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Paulo Ricardo Rezende | Software Architect & Tech Leader',
+  title: 'Paulo Rezende | Software Architect & Tech Leader',
   description: 'Over 18 years of experience in software development, architecture and technical leadership. Expertise in microservices, event-driven architecture, and cloud solutions.',
 }
 

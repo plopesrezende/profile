@@ -1,7 +1,7 @@
 import { AboutTranslations } from '../types';
 
 export const about: AboutTranslations = {
-  pageTitle: "Sobre Paulo Ricardo Rezende",
+  pageTitle: "Sobre Paulo Rezende",
   role: "Arquiteto de Software & Líder Técnico",
   bio1: "Com mais de 18 anos de experiência em desenvolvimento e arquitetura de software, sou especializado em projetar sistemas escaláveis e sustentáveis que resolvem problemas complexos de negócios.",
   bio2: "Minha paixão está em construir equipes de alto desempenho e implementar arquiteturas modernas usando microsserviços, padrões orientados a eventos e tecnologias em nuvem.",
