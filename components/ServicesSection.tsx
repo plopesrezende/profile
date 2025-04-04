@@ -11,10 +11,10 @@ export default function ServicesSection() {
   
   // Define service icons to be reused
   const SERVICE_ICONS = [
-    <FaLaptopCode key="architecture" className="text-4xl text-primary mb-4" />,
-    <FaUsers key="leadership" className="text-4xl text-primary mb-4" />,
-    <FaCloud key="cloud" className="text-4xl text-primary mb-4" />,
-    <FaGraduationCap key="training" className="text-4xl text-primary mb-4" />
+    <FaLaptopCode key="architecture" className="text-4xl text-primary dark:text-primary mb-4" />,
+    <FaUsers key="leadership" className="text-4xl text-primary dark:text-primary mb-4" />,
+    <FaCloud key="cloud" className="text-4xl text-primary dark:text-primary mb-4" />,
+    <FaGraduationCap key="training" className="text-4xl text-primary dark:text-primary mb-4" />
   ]
   
   const containerVariants = {
@@ -40,8 +40,8 @@ export default function ServicesSection() {
     <section className="py-20 bg-light dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">{sectionTitle}</h2>
-          <p className="text-xl max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-100">{sectionTitle}</h2>
+          <p className="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
             {sectionDescription}
           </p>
         </div>
@@ -56,12 +56,12 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <motion.div 
               key={index} 
-              className="card text-center"
+              className="card text-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
               variants={itemVariants}
             >
               <div>{SERVICE_ICONS[index]}</div>
-              <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-              <p>{service.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
             </motion.div>
           ))}
         </motion.div>

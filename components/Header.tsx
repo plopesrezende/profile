@@ -41,7 +41,7 @@ export default function Header() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`hover:text-primary transition-colors ${isActive(item.path)}`}
+                    className={`text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors ${isActive(item.path)}`}
                   >
                     {item.name}
                   </Link>
@@ -59,7 +59,7 @@ export default function Header() {
             <LanguageToggle isMobile={true} />
             <ThemeToggle isMobile={true} />
             <button
-              className="ml-4 text-2xl"
+              className="ml-4 text-2xl text-gray-800 dark:text-gray-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? closeMenu : openMenu}
             >
@@ -76,7 +76,7 @@ export default function Header() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`block py-2 hover:text-primary transition-colors ${isActive(item.path)}`}
+                    className={`block py-2 text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors ${isActive(item.path)}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

@@ -10,9 +10,6 @@ export const contact: ContactTranslations = {
   linkedin: {
     title: "LinkedIn"
   },
-  github: {
-    title: "GitHub"
-  },
   location: {
     title: "Location"
   },

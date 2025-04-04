@@ -11,7 +11,7 @@ export default function HeroSection() {
   const { name, role, description, exploreServices, getInTouch } = translations[language].hero
 
   return (
-    <section className="hero-gradient text-white py-20 relative">
+    <section className="hero-gradient dark:dark-hero-gradient text-white py-20 relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
@@ -29,10 +29,10 @@ export default function HeroSection() {
               {description}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link href="/services" className="bg-white text-primary font-bold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors text-center">
+              <Link href="/services" className="bg-white dark:bg-gray-800 text-primary font-bold px-6 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-center">
                 {exploreServices}
               </Link>
-              <Link href="/contact" className="border-2 border-white text-white font-bold px-6 py-3 rounded-md hover:bg-white hover:text-primary transition-colors text-center">
+              <Link href="/contact" className="border-2 border-white dark:border-gray-200 text-white font-bold px-6 py-3 rounded-md hover:bg-white hover:text-primary dark:hover:bg-gray-800 dark:hover:text-primary transition-colors text-center">
                 {getInTouch}
               </Link>
             </div>
@@ -44,7 +44,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="flex justify-center"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl">
               <Image
                 src="/paulo-hero.jpg"
                 alt="Paulo Rezende"

@@ -92,9 +92,6 @@ export interface ContactTranslations {
   linkedin: {
     title: string;
   };
-  github: {
-    title: string;
-  };
   location: {
     title: string;
   };

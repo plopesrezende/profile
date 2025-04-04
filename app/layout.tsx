@@ -24,11 +24,11 @@ export default function RootLayout({
       <head>
         <Favicon />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LanguageProvider>
             <Header />
-            <main>{children}</main>
+            <main className="min-h-screen">{children}</main>
             <Footer />
           </LanguageProvider>
         </ThemeProvider>
